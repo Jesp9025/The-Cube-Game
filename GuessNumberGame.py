@@ -1,6 +1,6 @@
 import random
 
-totalPoints = 0
+totalPoints = 0 #Temporary placeholder for total points throughout the game
 number = random.randint(1,10)
 attempts = 3
 
