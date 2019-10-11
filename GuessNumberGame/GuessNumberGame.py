@@ -1,11 +1,13 @@
-import random
+import random, time
 
 totalPoints = 0
 number = random.randint(1,10)
 attempts = 3
+
 print("########################################")
 print("Welcome to the Number-Guessing-Game\nYou have 3 attempts to guess the correct number.\nThe number is generated randomly from 1 to 10")
 print("########################################")
+
 while True: #This will make the code run until it reaches a break
     try: #try and except is used to prevent program from crashing if you enter a non-int as input
         answer = int(input("Guess the number: ")) #User types a number
@@ -15,11 +17,13 @@ while True: #This will make the code run until it reaches a break
                 print("You guessed the correct number!\nYou get 1 point.")
                 totalPoints += 1
                 print("Total points: ", totalPoints)
+                time.sleep(1)
                 break
             elif attempts <= 0: #If user runs out of attempts
-                print("You ran out of attempts.\nYou lose 1 point.")
+                print("You ran out of attempts.\nThe correct answer is", number, "\nYou lose 1 point.")
                 totalPoints -= 1
                 print("Total points: ", totalPoints)
+                time.sleep(1)
                 break
             elif answer > number: #Tells the user to try a lower number
                 print("Try a lower number")
