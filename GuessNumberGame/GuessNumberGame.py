@@ -1,6 +1,5 @@
-import random, time
+import random
 
-totalPoints = 0
 number = random.randint(1,10)
 attempts = 3
 
@@ -15,15 +14,11 @@ while True: #This will make the code run until it reaches a break
             attempts -= 1
             if answer == number: #If user guesses the correct number
                 print("You guessed the correct number!\nYou get 1 point.")
-                totalPoints += 1
                 print("Total points: ", totalPoints)
-                time.sleep(1)
                 break
             elif attempts <= 0: #If user runs out of attempts
                 print("You ran out of attempts.\nThe correct answer is", number, "\nYou lose 1 point.")
-                totalPoints -= 1
                 print("Total points: ", totalPoints)
-                time.sleep(1)
                 break
             elif answer > number: #Tells the user to try a lower number
                 print("Try a lower number")
