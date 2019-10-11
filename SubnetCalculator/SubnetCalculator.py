@@ -21,7 +21,7 @@ while True:
     print("The broadcast id is:",broadid)
     print("The first usable host is:",host1)
     print("The last usable host is:",host2)
-
+    
     while True:
         answer = input('Run again? (y/n): ')
         if answer in ('y', 'n'):
