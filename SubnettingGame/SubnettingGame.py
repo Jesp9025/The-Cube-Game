@@ -1,6 +1,6 @@
 import random
 
-number = random.randint(1, 5) #Random number to know which question to get asked
+number = random.randint(1, 8) #Random number to know which question to get asked
 correctAns = 0 #placeholder for the correct answer for the questions
 print("#######################################################")
 print("Welcome to the subnetting game.\nHere you will get a question regarding subnetting. You have 1 attempt to guess the correct answer.\nThere will be 4 possible answers.")
