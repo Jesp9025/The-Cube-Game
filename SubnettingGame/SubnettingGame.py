@@ -1,13 +1,13 @@
 import random
 
-number = random.randint(1, 5)
-correctAns = 0
+number = random.randint(1, 5) #Random number to know which question to get asked
+correctAns = 0 #placeholder for the correct answer for the questions
 print("#######################################################")
 print("Welcome to the subnetting game.\nHere you will get a question regarding subnetting. You have 1 attempt to guess the correct answer.\nThere will be 4 possible answers.")
 print("You will need to type the number of the answer you think is correct.")
 print("We prepared a little calculator if you need some help")
 print("#######################################################")
-
+#Basically if number is 1, it will ask question no.1, if number is 2, it will ask question no.2 etc.
 if number == 1:
     correctAns = 3
     answer = int(input("Enter the broadcast address for the network 172.20.218.128/25\n1: 172.20.218.224\n2: 172.20.218.248\n3: 172.20.218.255\n4: 172.20.218.0\nYour answer: "))
