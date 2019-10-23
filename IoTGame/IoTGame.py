@@ -106,5 +106,3 @@ def iotGame():
                 print("Wrong. The correct answer is", correctAns, "\nYou lose 1 point.")
                 points = -1
                 break
-start()
-iotGame()
