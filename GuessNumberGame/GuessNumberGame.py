@@ -1,11 +1,15 @@
 import random
 
-def guessNum(): #This is the function that we will be calling in CoreGame.py
+#This is the welcome message
+def start():
     print("########################################")
-    print("Welcome to the Number-Guessing-Game\nYou have 3 attempts to guess the correct number.\nThe number is generated randomly from 1 to 10")
-    print("########################################")
+    print("Welcome to the Number-Guessing-Game\nYou have 3 attempts to guess the correct number.\nThe number is generated randomly from 1 to 10\n")
+
+#This is the game itself
+def game():
+    number = random.randint(1,10) #Change the numbers to increase/decrease difficulty
     attempts = 3
-    number = random.randint(1,10)
+    global points #points is used to give/take points from the player when he finishes the game
     while True: #This will make the code run until it reaches a break
         try: #try and except is used to prevent program from crashing if you enter a non-int as input
             answer = int(input("Guess the number: ")) #User types a number
@@ -13,9 +17,11 @@ def guessNum(): #This is the function that we will be calling in CoreGame.py
                 attempts -= 1
                 if answer == number: #If user guesses the correct number
                     print("You guessed the correct number!\nYou get 1 point.")
+                    points = 1
                     break
                 elif attempts <= 0: #If user runs out of attempts
                     print("You ran out of attempts.\nThe correct answer is", number, "\nYou lose 1 point.")
+                    points = -1
                     break
                 elif answer > number: #Tells the user to try a lower number
                     print("Try a lower number")
