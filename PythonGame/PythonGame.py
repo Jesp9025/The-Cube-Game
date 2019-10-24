@@ -11,7 +11,7 @@ import random
 print("\nHello, welcome to The Python Quiz Mini Game"
       "\nIn this quiz, you will be asked 10 questions about programming language - Python."
       "\nTry your best to answer all 10 correctly." 
-      "\nEnter 1, 2, 3 or 4 for answer"
+      "\nEnter 1, 2, 3, 4 or 5 for answer"
       "\nDepending on which answer you think is right\n")
 
 class Quiz:
