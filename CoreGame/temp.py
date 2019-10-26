@@ -27,7 +27,7 @@ def countdown(n=3):
   print("The game is gonna be", gameName)
   time.sleep(1)
   while n > 0:
-    print(n, end="\r")
+    print(n, end="\r") # end="\r" removed the previously printed text
     n -= 1
     time.sleep(1)
   print("GO!")
