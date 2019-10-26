@@ -23,7 +23,7 @@ def clearTerminal():
     else: #Linux and Mac
         print("\033c", end="")
         
-def countdown(n):
+def countdown(n=3):
   print("The game is gonna be", gameName)
   time.sleep(1)
   while n > 0:
