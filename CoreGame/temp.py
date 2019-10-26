@@ -14,6 +14,7 @@ def difficulty():
             break
 
 
+            
 #https://stackoverflow.com/questions/2084508/clear-terminal-in-python
 #Function to clear the terminal         
 def clearTerminal():
@@ -21,3 +22,12 @@ def clearTerminal():
         subprocess.Popen("cls", shell=True).communicate()
     else: #Linux and Mac
         print("\033c", end="")
+        
+#Improved countdown timer        
+def countdown(n):
+  print("The game is gonna be", gameName)
+  while n > 0:
+    print(n, end="\r")
+    n -= 1
+    time.sleep(1)
+  print("GO!")
