@@ -23,9 +23,9 @@ def clearTerminal():
     else: #Linux and Mac
         print("\033c", end="")
         
-#Improved countdown timer        
 def countdown(n):
   print("The game is gonna be", gameName)
+  time.sleep(1)
   while n > 0:
     print(n, end="\r")
     n -= 1
