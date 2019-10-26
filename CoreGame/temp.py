@@ -36,7 +36,6 @@ def countdown(n=3):
 def ready():
     while True:
         choice = input("Well then, are you ready to play the game? (type 'yes' or 'no'): ").upper()
-
         if choice == "YES" or choice == "Y":
             break
         elif choice == "NO" or choice == "N":
