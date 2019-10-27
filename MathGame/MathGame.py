@@ -19,5 +19,5 @@ def mathFunc():
         print ("Correct\nThe dragon takes 50 damage") #output if the awnser is correct
         points = -50
     else:
-        print ("Incorrect. The actual answer is",maths, "\nThe dragon regenerates 15 health") #output if the awnser is wrong, and tells the right awnser
+        print ("Incorrect. The actual answer is", maths, "\nThe dragon regenerates 15 health") #output if the awnser is wrong, and tells the right awnser
         points = 15
