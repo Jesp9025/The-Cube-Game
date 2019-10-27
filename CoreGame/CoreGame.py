@@ -11,7 +11,6 @@ normalMode = 0
 hardMode = 0
 totalHealth = 0
 healthToWin = 0
-miniGameName = ""
 
 #Function to clear the terminal
 #https://stackoverflow.com/questions/2084508/clear-terminal-in-python 
