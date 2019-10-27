@@ -3,11 +3,17 @@ Inspiration for working with classes (OOP)
 https://www.mikedane.com/programming-languages/python/building-a-quiz/
 Inspiration from another example of the game
 https://stackoverflow.com/questions/26792705/how-to-create-a-simple-quiz-in-python-with-multiple-topics
+
+Introduction to Python MiniGame
+Its a simple text-based quiz game with options (from 2 to 5). Only one option is correct. The quiz has 10 questions.
+After the quiz, terminal show your result. The options are in numerical order.
+
 """
 
 import random
 
 # Welcome Message
+# Print a message onto the startup screen
 def start():
   print("########################################"
       "\nHello, welcome to The Python Quiz Mini Game"
@@ -18,7 +24,16 @@ def start():
       "\nEach correct answer will deal 10 damage to the dragon"
       "\nAnd incorrect will regenerate 5 health\n")
 
-
+""" 
+We define Quiz class. This class will consist of a question and 2 types of answers:
+1., Correct answer
+2., Another group of other (incorrect) answers
+The __init__() function will be called whenever you create a new object in quizList with the function Quiz(), 
+with its arguments being passed on into the correct attribute.
+Self represents the instance of the class (for example in this code, represents the instance of the questions, 
+correct answers and other incorrect answers.)
+By using the “self” keyword we can access the attributes and methods of the class.
+"""
 class Quiz:
   def __init__(self, question, correctAnswer, otherAnswers):
     self.q = question
@@ -26,6 +41,7 @@ class Quiz:
     self.oA = otherAnswers
 
 # List of questions
+# Format of the question: Question, correct answer, other incorrect answers
 def questionFunc():
   global questionList
   questionList = [Quiz("A comment in Python language can start with # sign. (True or false)", "True", ["False"]),
@@ -39,19 +55,28 @@ def questionFunc():
   Quiz("The continue command is used to exit a loop. (True or false)", "false", ["true"]),
   Quiz("Which method can be used to remove any whitespace from both the beginning and the end of a string?", "strip()", ["len()", "trim()", "ptrim()"])
   ]
-  random.shuffle(questionList)
+  random.shuffle(questionList) # this function always displays questions in a random order
 
 def pythonGame():
   global points
-  score = 0
-  regen = 0
-  for questionIndex in questionList:
-    print(questionIndex.q)
-    print("Possible answers are:")
+  score = 0 # Variable that counts how many answers were correct. Always beginning from zero.
+  regen = 0 # Variable that gives "dragon" health, depending on how many answers are incorrect
+  # Main loop. The program loop should go over each item of the list
+  for questionIndex in questionList: 
+    print(questionIndex.q) # Output each question.
+    print("Possible answers are:") # Output for possible answer
+"""
+  All possible answers should appear in a random order so that the correct answer isn't always at the same position. 
+  For example: always on the first position
+  All options is in random order with numbers. Every option has own number of the answer.
+"""
     possible = questionIndex.oA + [questionIndex.cA] # square brackets turn correct answer into list for concatenating with other list
     random.shuffle(possible)
-    count = 0 # list indexes start at 0 in python
+    count = 0 # list indexes start at 0, counts from 0
 
+# Players input (interaction with player)
+# While loop is checking whether what the user entered is really a number that corresponds with an answer.
+# If the player has entered something other than the answer number, the game will notify him
     while count < len(possible):
       print(str(count+1) + ": " + possible[count])
       count += 1
@@ -60,6 +85,11 @@ def pythonGame():
 
     playerAnswer = input()
 
+# Checking the correct answers
+
+# The condition compares the player's response with the correct answer
+# If they are the same, the user's answer was correct and the variable score should be increased by 1 (+ 1 point). 
+# Else, it's wrong and the user should be told the correct answer.
     while not playerAnswer.isdigit():
       print("That was not a number. Please enter the number of your answer:")
       playerAnswer = input()
@@ -79,8 +109,9 @@ def pythonGame():
       regen += 5
     print("")
 
-  print("You answered " + str(score) + " of " + str(len(questionList)) + " questions correctly.")
-  print("Final score is:", score, "out of", len(questionList), "that is", float(score / len(questionList)) * 100, "%")
+# Result of the player
+  print("You answered " + str(score) + " of " + str(len(questionList)) + " questions correctly.") # The len() function returns the number of correct items in questionList.
+  print("Final score is:", score, "out of", len(questionList), "that is", float(score / len(questionList)) * 100, "%") # Score in percentage (float)
   damage = score * 10
   points = score * (-10) + regen
   print("You deal", damage, "damage to the dragon, and it regenerates", regen, "health")
