@@ -235,6 +235,7 @@ while True:
         print("The game you'll be playing right now is...", gameName)
         countdown()
         clearTerminal()
+        MathGame.start()
         MathGame.mathFunc()
         totalHealth = totalHealth + MathGame.points
         print("\nDragons remaining health:", totalHealth, "\n")
