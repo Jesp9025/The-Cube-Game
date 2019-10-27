@@ -1,4 +1,4 @@
-Introduction to Python MiniGame
+# Introduction to Python MiniGame
 
 Its a simple text-based quiz game with options (from 2 to 5).
 Only one option is correct. 
