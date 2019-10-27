@@ -28,23 +28,6 @@ def start():
     print("In this game you'll have 10 tries to guess the secret given word\n")
     print("Winning the game will deal 75 damage to the dragon\nLosing will regenerate 15 of the dragons health")
 
-#--------------------------------------------------------------------------------
-#The player is given with a choice if he wants to continue playing or if he wants to quit
-
-
-def ready():
-    print ("Well then, are you ready to play the game? (type 'yes' or 'no').\n")
-
-    while True:
-        choice = input().upper()
-
-        if choice == "YES" or choice == "Y":
-            break
-        elif choice == "NO" or choice == "N":
-            sys.exit(print("I guess you were too afraid to guess some words, see ya then!"))
-            
-        else:
-            print ("We just told you to enter 'Yes' or 'No' for crying out loud.")
 
 #-------------------------------------------------------------------------------
 #Making the letters turn to "_"
@@ -94,7 +77,7 @@ def game():
                         
                 #If there aren't any shown symbols left, the game is won and it exits
                 if not '_' in guess_word:
-                    print("Congratulations, you may go to the next mini game.")
+                    print("You guessed the word.\nThe dragon takes 75 damage")
                     points = -75
                     
                     break
@@ -104,21 +87,12 @@ def game():
                 print("The letter you tried was incorrect. Have another go.\n\n")
                 guess_taken += 1
                 if guess_taken == 10:
-                    print("Looks like you've failed. The secret word was", randomizer,  ". Better luck next time.")
+                    print("Looks like you've failed. The secret word was", randomizer, "\nThe dragon regenerates 15 health")
                     points = 15
                     
 
 
 #-------------------------------------------------------------------------------
-
-#Regarding the main game, if you want to make the program continue after the "Hangman" was won, just
-#insert the "if no '_' in guess_word:" command right after the "secret()" and "game()" functions
-
-#And insert "else:" after that if the game was not won"
-
-
-
-
 
 #This was mostly copied from "https://codereview.stackexchange.com/questions/178312/another-python-hangman"
 #Just the variable names, function names and strings were modified, with the addition of deeper explanations than the original code.
