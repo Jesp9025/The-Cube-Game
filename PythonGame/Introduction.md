@@ -1,1 +1,2 @@
-gddgdgddgdgdgdg
+Introduction to Python MiniGame
+
