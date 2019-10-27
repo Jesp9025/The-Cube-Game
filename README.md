@@ -9,4 +9,4 @@ If you win a minigame, you deal damage to the dragon
 If you lose, the dragon regenerates some health
 
 # How to start
-Simply run the CoreGame.py
+Simply run CoreGame.py
