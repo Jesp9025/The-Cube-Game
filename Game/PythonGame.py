@@ -65,11 +65,11 @@ def pythonGame():
   for questionIndex in questionList: 
     print(questionIndex.q) # Output each question.
     print("Possible answers are:") # Output for possible answer
-"""
-  All possible answers should appear in a random order so that the correct answer isn't always at the same position. 
-  For example: always on the first position
-  All options is in random order with numbers. Every option has own number of the answer.
-"""
+
+ # All possible answers should appear in a random order so that the correct answer isn't always at the same position. 
+ # For example: always on the first position
+ # All options is in random order with numbers. Every option has own number of the answer.
+
     possible = questionIndex.oA + [questionIndex.cA] # square brackets turn correct answer into list for concatenating with other list
     random.shuffle(possible)
     count = 0 # list indexes start at 0, counts from 0
