@@ -1,5 +1,6 @@
 # The-Cube-Game
 Programming project. We are making a game called Cube Game
+By group 3
 
 # What is it about
 The game is about winning each minigame to defeat the dragon
